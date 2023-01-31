@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/companies/saveCompany}"
+      th:method="post"
+      th:object="${company}">
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">CompanyName</label>
+        <input type="text" th:field="locatedCoutry" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">locatedCountry</label>
+        <input type="text" th:field="companyName" class="form-control" id="exampleInputPassword1">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+</body>
+
+</html>

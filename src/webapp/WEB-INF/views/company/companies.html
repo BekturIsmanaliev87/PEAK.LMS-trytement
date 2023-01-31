@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">country</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="company:${companies}">
+        <th scope="row">1</th>
+        <th scope="row">dragon</th>
+        <th scope="row">USA</th>
+        <th scope="row">2</th>
+        <th scope="row">thing</th>
+        <th scope="row">russia</th>
+        <td th:text="${company.id}"></td>
+        <td th:text="${company.companyName}"></td>
+        <td th:text="${company.locatedCountry}"></td>
+    </tr>
+    <td>
+        <a th:href="@{companies/update/{id}(id=${company.id})}">
+            update
+        </a>
+    </td>
+    <td>
+        <form th:method="DELETE"
+              th:action="@{/companies/delete/{id}(id=${company.getId()})}">
+            <input type="submit" value="delete">
+        </form>
+    </td>
+    </tbody>
+</table>
+<a href="/companies" tabindex="0" class="btn btn-lg btn-danger" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Dismissible popover" data-bs-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
+</body>
+</html>
